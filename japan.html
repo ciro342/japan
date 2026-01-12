@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubre Japón - Guía de Viaje</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #c41e3a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #c41e3a;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23d4a5a5" width="1200" height="600"/><circle fill="%23c41e3a" cx="900" cy="300" r="150"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.3em;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #2c2c2c;
+            font-weight: normal;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            background-color: #d4a5a5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #c41e3a;
+            font-weight: normal;
+        }
+
+        .card-content p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        .info-section {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .info-item h4 {
+            color: #c41e3a;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            font-weight: normal;
+        }
+
+        .info-item p {
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .cultura-section {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .cultura-content {
+            margin-top: 30px;
+            color: #555;
+            font-size: 1em;
+            line-height: 1.9;
+        }
+
+        .contacto-section {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            color: #555;
+            font-size: 1em;
+            line-height: 2;
+        }
+
+        footer {
+            background-color: #2c2c2c;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">日本 JAPÓN</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#cultura">Cultura</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Descubre Japón</h1>
+            <p>Una experiencia inolvidable entre tradición y modernidad</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="destinos">
+            <h2 class="section-title">Destinos Populares</h2>
+            
+            <div class="cards">
+                <div class="card">
+                    <div class="card-image">🏯</div>
+                    <div class="card-content">
+                        <h3>Tokio</h3>
+                        <p>La vibrante capital que combina rascacielos futuristas con templos antiguos. Explora Shibuya, Asakusa y el Palacio Imperial.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">⛩️</div>
+                    <div class="card-content">
+                        <h3>Kioto</h3>
+                        <p>La antigua capital imperial con más de 2,000 templos budistas, santuarios sintoístas y jardines tradicionales.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">🗻</div>
+                    <div class="card-content">
+                        <h3>Monte Fuji</h3>
+                        <p>El icónico volcán sagrado de Japón. Perfecto para excursionismo y fotografía en cualquier época del año.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2 class="section-title">Información Útil</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>Mejor época para visitar</h4>
+                        <p>Primavera (marzo-mayo) para ver los cerezos en flor, u otoño (septiembre-noviembre) para disfrutar del follaje colorido.</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Moneda</h4>
+                        <p>Yen japonés (¥). Se recomienda llevar efectivo, aunque las tarjetas son cada vez más aceptadas en las grandes ciudades.</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Idioma</h4>
+                        <p>Japonés. En las zonas turísticas encontrarás señalización en inglés. Aprender algunas frases básicas será muy apreciado.</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Transporte</h4>
+                        <p>El JR Pass te permite viajar ilimitadamente en trenes de Japan Railways, incluyendo la mayoría de los Shinkansen (trenes bala).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cultura" class="cultura-section">
+            <h2 class="section-title">Cultura Japonesa</h2>
+            <div class="cultura-content">
+                <p>La cultura japonesa es una fascinante mezcla de tradiciones milenarias y modernidad. Desde la ceremonia del té hasta los últimos avances tecnológicos, Japón ofrece una experiencia única.</p>
+                
+                <p style="margin-top: 20px;">Algunos aspectos destacados de la cultura japonesa incluyen el respeto por la naturaleza, la importancia de la armonía social, la exquisita gastronomía que va más allá del sushi, y las festividades tradicionales que se celebran durante todo el año.</p>
+                
+                <p style="margin-top: 20px;">La arquitectura tradicional, los jardines zen, el arte del origami, y las artes marciales son solo algunas de las manifestaciones culturales que podrás explorar durante tu visita.</p>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto-section">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> info@descubriendojapon.com</p>
+                <p><strong>Teléfono:</strong> +81 3-1234-5678</p>
+                <p><strong>Dirección:</strong> Shibuya, Tokio, Japón</p>
+                <p style="margin-top: 20px;">Estamos aquí para ayudarte a planificar tu viaje perfecto a Japón. No dudes en contactarnos para cualquier consulta.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Guía de Viaje Japón. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
